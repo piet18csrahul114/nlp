@@ -85,7 +85,7 @@ st.header("Tweet System ")
 text = st.text_area("Write tweet")
 
 if st.button("Tweet Analysis"):
-  result=review(text)
+  result=tweet(text)
   st.success('Model has predicted {}'.format(result))
       
 if st.button("About"):
