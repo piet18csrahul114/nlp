@@ -9,7 +9,7 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 model = pickle.load(open('restuarantreviewnlp.pkl','rb'))   
 
 
-def review(text):
+def tweet(text):
   dataset = pd.read_csv('train_E6oV3lV.csv')
   # First step: cleaning Text and removing number and punctuation marks.
   # Cleaning the texts for all review using for loop
@@ -32,7 +32,7 @@ def review(text):
   cv = CountVectorizer(max_features = 5000)
   X = cv.fit_transform(corpus).toarray()
   import re
-  review = re.sub('[^a-zA-Z]', ' ', text)
+  tweet = re.sub('[^a-zA-Z]', ' ', text)
   tweet=tweet.lower()
   print(tweet)
   # Third step: Removing stop words like 'this, the'
